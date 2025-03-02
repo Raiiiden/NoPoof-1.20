@@ -123,6 +123,14 @@ mixin {
 
 repositories {
   flatDir { dir 'libs' }
+    maven {
+        name = 'MinecraftForge'
+        url = 'https://maven.minecraftforge.net/'
+
+        content {
+            includeGroup 'net.minecraftforge'
+        }
+    }
   maven {
     // location of the maven that hosts JEI files
     name = "Progwml6 maven"
@@ -134,11 +142,25 @@ repositories {
   }
   maven { url = 'https://maven.blamejared.com' }
   maven { url = 'https://www.cursemaven.com'  }
+    maven { url 'https://jitpack.io' }
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
-    minecraft "net.neoforged:forge:${mc_version}-${neo_version}"
+    minecraft "net.minecraftforge:forge:${mc_version}-${neo_version}"
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+    implementation fg.deobf("curse.maven:rpgz-404828:5549878")
+
+    implementation(jarJar("com.github.Fallen-Breath.conditional-mixin:conditional-mixin-forge:0.6.4")) {
+        jarJar.ranged(it, "[0.6.4,)")
+    }
+    implementation "me.shedaniel.cloth:cloth-config-forge:11.1.136"
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
