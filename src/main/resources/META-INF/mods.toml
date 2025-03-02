@@ -22,7 +22,7 @@ description='''Removes the death particle'''
 [[dependencies.nopoof]] #mandatory
 modId="forge"
 mandatory=true
-versionRange="[6,)"
+versionRange="[47.3,)"
 ordering="NONE"
 side="BOTH"
 

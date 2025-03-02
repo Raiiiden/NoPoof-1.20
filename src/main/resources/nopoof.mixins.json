@@ -3,7 +3,9 @@
   "package": "com.raiiiden.nopoof.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "nopoof.refmap.json",
-  "mixins": [],
+  "mixins": [
+    "RpgZMobMixinMixin"
+  ],
   "client": [
     "LivingEntityMixin"
   ],
