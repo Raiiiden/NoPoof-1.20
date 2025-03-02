@@ -5,7 +5,7 @@
   "refmap": "nopoof.refmap.json",
   "mixins": [],
   "client": [
-    "ClientLevelMixin"
+    "LivingEntityMixin"
   ],
   "minVersion": "0.8.5"
 }
